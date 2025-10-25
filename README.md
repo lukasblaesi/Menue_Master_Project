@@ -1,4 +1,164 @@
-This is a template repository for student hands-on in the course Programming Foundations at FHNW, BSc BIT. 
-It contains a pre-configured codespace for programming in Python.
-
-Enjoy!
+# Projekt_Gruppe3_MenuMaster – Rezept- und Wochenplanungsprogramm (Konsole)
+ 
+Dieses Projekt wird im Rahmen des Moduls **Grundlagen Programmieren** erstellt.
+Ziel ist es, eine **Konsolenanwendung** zu entwickeln, mit der Anwender ihre Rezepte verwalten und daraus eine Wochenplanung inklusive Einkaufsliste erstellen können.
+ 
+---
+ 
+## Analyse
+ 
+### **Problem**
+ 
+In vielen Haushalten wird die Wochenplanung für Mahlzeiten manuell geführt, Rezepte liegen auf Papier oder sind über verschiedene Quellen verteilt. Dadurch fehlt Übersicht über benötigte Zutaten und Mengen, was oft zu Mehrfachkäufen oder fehlenden Zutaten führt.
+ 
+Dieses Programm soll den Prozess **digitalisieren, vereinfachen und automatisieren**.
+ 
+---
+ 
+### **Szenario**
+ 
+Ein Anwender möchte seine Rezepte an einem zentralen Ort verwalten.
+Er kann neue Rezepte anlegen, bestehende ändern oder löschen.
+Die Anwendung ermöglicht es ausserdem, die Rezepte auf Wochentage zu verteilen.
+Aus diesen Daten wird automatisch eine Einkaufsliste erstellt, die alle benötigten Zutaten zusammenfasst.
+Das Ganze läuft vollständig über die **Kommandozeile (Konsole)**, ohne grafische Oberfläche.
+ 
+---
+ 
+### **User Stories**
+ 
+1. Als Anwender möchte ich Rezepte anlegen können, die aus mehreren Zutaten bestehen und Portionen hinterlegen können.
+2. Als Anwender möchte ich Rezepte ändern können, wenn ich sie anpassen will.
+3. Als Anwender möchte ich Rezepte löschen können, die ich nicht mehr verwende.
+4. Als Anwender möchte ich, dass meine Rezepte in einer Liste gespeichert werden, die ich jederzeit wieder aufrufen kann.
+5. Als Anwender möchte ich meine Rezepte den Wochentagen zuordnen können.
+6. Als Anwender möchte ich meine Wochenplanung jederzeit abrufen können.
+7. Als Anwender möchte ich nur einen Wochenplan erfassen können. Wenn ich einen neuen Wochenplan erstelle, soll der bestehende Wochenplan ersetzt werden.
+8. Als Anwender möchte ich, dass ich bei der Wochenplanung nur aus meinen erfassten Rezepten auswählen kann.
+9. Als Anwender möchte ich einen zufälligen Wochenplan erstellen lassen können mit meinen erfassten Rezepten.
+10. Als Anwender möchte ich eine wöchentliche Einkaufsliste generieren können, die die Mengen aller für die Woche geplanten Rezepte zusammenfasst.
+11. Als Anwender möchte ich das Programm in der Konsole bedienen können, ohne grafische Oberfläche, damit alles einfach bleibt.
+ 
+---
+ 
+### **Use Cases**
+ 
+* Rezept anlegen
+* Rezept ändern
+* Rezept löschen
+* Rezeptliste anzeigen
+* Wochenplan erstellen (manuell oder zufällig)
+* Wochenplan anzeigen
+* Einkaufsliste generieren und anzeigen
+* Daten speichern und laden
+ 
+---
+ 
+## Projektanforderungen
+ 
+Das Projekt erfüllt die drei Pflichtanforderungen der Aufgabenstellung:
+ 
+1. **Interaktive Anwendung (Konsoleneingaben)**
+2. **Datenvalidierung (Eingabeprüfung)**
+3. **Dateiverarbeitung (Lesen und Schreiben)**
+ 
+---
+ 
+### 1. Interaktive Anwendung
+ 
+Das Programm läuft vollständig über die **Konsole**.
+Der Anwender kann über ein Menü zwischen verschiedenen Funktionen wählen, z.B.:
+ 
+* Rezept anlegen, ändern oder löschen
+* Wochenplan anzeigen oder neu generieren
+* Einkaufsliste ausgeben
+ 
+Alle Eingaben erfolgen per Tastatur, die Ausgaben werden übersichtlich im Terminal dargestellt.
+ 
+---
+ 
+### 2. Datenvalidierung
+ 
+Bei der Dateneingabe wird auf **korrekte, vollständige und sinnvolle Eingaben** geachtet.
+Beispiele:
+ 
+* Der Rezeptname darf **nicht leer** sein und wird automatisch **mit korrekter Gross-/Kleinschreibung** gespeichert / abgeglichen.
+* Mengenangaben müssen **numerisch** und **grösser als 0** sein.
+* Zutaten dürfen **nicht doppelt** innerhalb eines Rezepts vorkommen.
+* Beim Auswählen eines Rezepts für den Wochenplan wird geprüft, ob das Rezept **existiert**.
+* Das Programm reagiert auf ungültige Eingaben mit **klaren Fehlermeldungen** und fordert eine erneute Eingabe an.
+ 
+---
+ 
+### 3. Dateiverarbeitung
+ 
+Das Programm speichert alle relevanten Daten in **JSON-Dateien** (strukturierte Textformate).
+ 
+#### **Input (Laden beim Start):**
+ 
+* **Rezepte:** Enthält Name, Zutatenliste, Mengen, Portionen
+* **Wochenplan:** Zuordnung von Rezepten zu den Wochentagen
+ 
+#### **Output (Speichern oder Ausgabe im Programm):**
+ 
+* **Einkaufsliste:** Automatisch generiert aus allen Rezepten des Wochenplans
+ 
+  * Zutaten werden **zusammengefasst**, wenn sie mehrfach vorkommen
+  * Ausgabe sowohl **in der Konsole** als auch optional **in einer Textdatei** (`einkaufsliste.txt`)
+ 
+Beim Start der Anwendung werden vorhandene Dateien automatisch geladen.
+Beim Beenden werden alle Änderungen automatisch gespeichert, um Datenverlust zu vermeiden.
+ 
+---
+ 
+## Umsetzung (Implementation)
+ 
+### **Technologie**
+ 
+* Programmiersprache: **Python 3.x**
+* Entwicklungsumgebung: **GitHub Codespaces / Visual Studio Code**
+* Formatierung: **PEP8-konform**
+* Externe Bibliotheken: Aktuell noch nicht vorahnden, wird ergänzt.
+ 
+---
+ 
+### **Projektstruktur**
+ 
+---
+Wird ergänzt
+---
+ 
+### **Starten der Anwendung**
+ 
+---
+Wird ergänzt
+---
+ 
+### **Verwendete Bibliotheken**
+ 
+---
+ 
+Wird ergänzt
+ 
+---
+ 
+ 
+## Team & Beiträge
+ 
+| Name      | Beitrag / Verantwortungsbereich                |
+| --------- | ---------------------------------------------- |
+| Student A | Rezepte erfassen, ändern und löschen           |
+| Student B | Wochenplanung und Zufallslogik                 |
+| Student C | Einkaufsliste generieren und Dateiverarbeitung |
+ 
+---
+ 
+## Zusammenarbeit
+ 
+* Das Projekt wurde im Team im Rahmen der Programmiergrundlagen entwickelt.
+* Jeder Studierende war für einen Teilbereich verantwortlich.
+* Regelmässige Commits und Code Reviews dienten der **Versionskontrolle** und **Qualitätssicherung**.
+* Gemeinsame Tests und Fehlersuche sorgten für eine stabile Endversion.
+ 
+---
+ 
