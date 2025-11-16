@@ -18,7 +18,6 @@ Dieses Programm soll den Prozess **digitalisieren, vereinfachen und automatisier
 ### **Szenario**
  
 Ein Anwender möchte seine Rezepte an einem zentralen Ort verwalten.
-Er kann neue Rezepte anlegen, bestehende ändern oder löschen.
 Die Anwendung ermöglicht es ausserdem, die Rezepte auf Wochentage zu verteilen.
 Aus diesen Daten wird automatisch eine Einkaufsliste erstellt, die alle benötigten Zutaten zusammenfasst.
 Das Ganze läuft vollständig über die **Kommandozeile (Konsole)**, ohne grafische Oberfläche.
