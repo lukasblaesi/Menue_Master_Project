@@ -21,7 +21,7 @@ def main():
         choice = input("Auswahl: ").strip()
 
         if choice == "1":
-            recipes_list = recipes.list_recipes(recipes)
+            recipes_list = recipes.list_recipes(recipes_list)
         elif choice == "2":
             planner.show_weekplan(weekplan)
             input("Weiter mit Enter...")
