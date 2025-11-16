@@ -3,6 +3,7 @@ import recipes
 import planner
 import shopping
 
+
 def main():
     recipes_list, weekplan = load_data()
 
@@ -20,7 +21,7 @@ def main():
         choice = input("Auswahl: ").strip()
 
         if choice == "1":
-            recipes_list = recipes.menu_recipes(recipes_list, weekplan)
+            recipes_list = recipes.list_recipes(recipes)
         elif choice == "2":
             planner.show_weekplan(weekplan)
             input("Weiter mit Enter...")
@@ -40,6 +41,6 @@ def main():
         else:
             print("Ungültige Auswahl.")
 
+
 if __name__ == "__main__":
     main()
-

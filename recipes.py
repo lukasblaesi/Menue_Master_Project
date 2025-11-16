@@ -2,9 +2,9 @@
 # -------------------------------------------------------------
 # Rezepte anzeigen
 # -------------------------------------------------------------
-
-def menu_recipes(recipes, weekplan):
-    """Menü zur Verwaltung von Rezepten."""
+"""
+def menu_recipes(recipes):
+    Menü zur Verwaltung von Rezepten.
     while True:
         print("\n--- Rezepte ---")
         print("1) Rezeptliste anzeigen")
@@ -18,7 +18,7 @@ def menu_recipes(recipes, weekplan):
             return recipes
         else:
             print("Ungültige Auswahl.")
-
+"""
 
 
 def list_recipes(recipes):
