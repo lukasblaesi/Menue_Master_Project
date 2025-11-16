@@ -64,7 +64,7 @@ Das Projekt erfüllt die drei Pflichtanforderungen der Aufgabenstellung:
 Das Programm läuft vollständig über die **Konsole**.
 Der Anwender kann über ein Menü zwischen verschiedenen Funktionen wählen, z.B.:
  
-* Rezept anlegen, ändern oder löschen
+* Rezept anzeigen
 * Wochenplan anzeigen oder neu generieren
 * Einkaufsliste ausgeben
  
@@ -77,7 +77,7 @@ Alle Eingaben erfolgen per Tastatur, die Ausgaben werden übersichtlich im Termi
 Bei der Dateneingabe wird auf **korrekte, vollständige und sinnvolle Eingaben** geachtet.
 Beispiele:
  
-* Der Rezeptname darf **nicht leer** sein und wird automatisch **mit korrekter Gross-/Kleinschreibung** gespeichert / abgeglichen.
+
 * Mengenangaben müssen **numerisch** und **grösser als 0** sein.
 * Zutaten dürfen **nicht doppelt** innerhalb eines Rezepts vorkommen.
 * Beim Auswählen eines Rezepts für den Wochenplan wird geprüft, ob das Rezept **existiert**.
@@ -142,7 +142,7 @@ Wird ergänzt
  
 | Name      | Beitrag / Verantwortungsbereich                |
 | --------- | ---------------------------------------------- |
-| Student A | Rezepte erfassen, ändern und löschen           |
+| Student A | Rezeptverwaltung                               |
 | Student B | Wochenplanung und Zufallslogik                 |
 | Student C | Einkaufsliste generieren und Dateiverarbeitung |
  
