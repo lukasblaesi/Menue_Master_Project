@@ -27,25 +27,20 @@ Das Ganze läuft vollständig über die **Kommandozeile (Konsole)**, ohne grafis
  
 ### **User Stories**
  
-1. Als Anwender möchte ich Rezepte anlegen können, die aus mehreren Zutaten bestehen und Portionen hinterlegen können.
-2. Als Anwender möchte ich Rezepte ändern können, wenn ich sie anpassen will.
-3. Als Anwender möchte ich Rezepte löschen können, die ich nicht mehr verwende.
-4. Als Anwender möchte ich, dass meine Rezepte in einer Liste gespeichert werden, die ich jederzeit wieder aufrufen kann.
-5. Als Anwender möchte ich meine Rezepte den Wochentagen zuordnen können.
-6. Als Anwender möchte ich meine Wochenplanung jederzeit abrufen können.
-7. Als Anwender möchte ich nur einen Wochenplan erfassen können. Wenn ich einen neuen Wochenplan erstelle, soll der bestehende Wochenplan ersetzt werden.
-8. Als Anwender möchte ich, dass ich bei der Wochenplanung nur aus meinen erfassten Rezepten auswählen kann.
-9. Als Anwender möchte ich einen zufälligen Wochenplan erstellen lassen können mit meinen erfassten Rezepten.
-10. Als Anwender möchte ich eine wöchentliche Einkaufsliste generieren können, die die Mengen aller für die Woche geplanten Rezepte zusammenfasst.
-11. Als Anwender möchte ich das Programm in der Konsole bedienen können, ohne grafische Oberfläche, damit alles einfach bleibt.
+
+1. Als Anwender möchte ich, dass meine Rezepte in einer Liste gespeichert werden, die ich jederzeit wieder aufrufen kann.
+2. Als Anwender möchte ich meine Rezepte den Wochentagen zuordnen können.
+3. Als Anwender möchte ich meine Wochenplanung jederzeit abrufen können.
+4. Als Anwender möchte ich nur einen Wochenplan erfassen können. Wenn ich einen neuen Wochenplan erstelle, soll der bestehende Wochenplan ersetzt werden.
+5. Als Anwender möchte ich, dass ich bei der Wochenplanung nur aus meinen erfassten Rezepten auswählen kann.
+6. Als Anwender möchte ich einen zufälligen Wochenplan erstellen lassen können mit meinen erfassten Rezepten.
+7. Als Anwender möchte ich eine wöchentliche Einkaufsliste generieren können, die die Mengen aller für die Woche geplanten Rezepte zusammenfasst.
+8. Als Anwender möchte ich das Programm in der Konsole bedienen können, ohne grafische Oberfläche, damit alles einfach bleibt.
  
 ---
  
 ### **Use Cases**
  
-* Rezept anlegen
-* Rezept ändern
-* Rezept löschen
 * Rezeptliste anzeigen
 * Wochenplan erstellen (manuell oder zufällig)
 * Wochenplan anzeigen
