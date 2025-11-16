@@ -7,7 +7,7 @@
 # -------------------------------------------------------------
 
 def generate_shopping_list(recipes, weekplan):
-    """Kurze Orchestrierung: prüft, sammelt, zeigt an, speichert."""
+    """Kurze Orientierung: prüft, sammelt, zeigt an, speichert."""
     if not weekplan:
         print("Kein Wochenplan vorhanden.")
         return
@@ -23,7 +23,7 @@ def generate_shopping_list(recipes, weekplan):
 
 
 # ------------------------------- Sammeln -------------------------------
-
+#Prüfen
 def _collect_totals(recipes, weekplan):
     """Erzeugt die Summen-Matrix: {(Zutat, Einheit): Menge}."""
     totals = {}

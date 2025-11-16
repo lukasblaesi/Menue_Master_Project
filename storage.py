@@ -8,8 +8,8 @@ import json
 import os
 
 DATA_FOLDER = "data"
-FILE_RECIPES = os.path.join(DATA_FOLDER, "recipes.json")
-FILE_WEEKPLAN = os.path.join(DATA_FOLDER, "weekplan.json")
+FILE_RECIPES = "data/recipes.json"
+FILE_WEEKPLAN = "data/recipes.json"
 
 
 def load_data():
@@ -17,8 +17,8 @@ def load_data():
     if not os.path.exists(DATA_FOLDER):
         os.makedirs(DATA_FOLDER)
 
-    recipes = _load_or_empty(FILE_RECIPES, [])
-    weekplan = _load_or_empty(FILE_WEEKPLAN, {})
+    recipes = _load_or_empty(FILE_RECIPES)   
+    weekplan = _load_or_empty(FILE_WEEKPLAN)  
 
     return recipes, weekplan
 
@@ -29,17 +29,15 @@ def save_data(recipes, weekplan):
     _save(FILE_WEEKPLAN, weekplan)
 
 
-def _load_or_empty(path, default_value):
-    """Hilfsfunktion zum Laden von JSON. Fehler -> default_value."""
+def _load_or_empty(path):
+    """Hilfsfunktion zum Laden des recipes und weekplan files."""
     try:
-        with open(path, "r", encoding="utf-8") as f:
+        with open(path, "r")as f:
             return json.load(f)
     except FileNotFoundError:
-        return default_value
-    except json.JSONDecodeError:
-        print(f"Datei beschädigt: {path}. Es wird ein leeres Objekt geladen.")
-        return default_value
+        print(f"Folgendes file konnte nicht gefunden werden: {path}")
 
+# Eventuell löschen
 
 def _save(path, data):
     """Schreibt JSON zurück auf die Festplatte."""
