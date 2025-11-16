@@ -10,7 +10,7 @@ def main():
         print("\n------------------------------")
         print(" MenuMaster (Rezeptplaner)")
         print("------------------------------")
-        print("1) Rezepte verwalten")
+        print("1) Rezepte anzeigen")
         print("2) Wochenplan anzeigen")
         print("3) Wochenplan neu (manuell)")
         print("4) Wochenplan neu (zufällig)")
