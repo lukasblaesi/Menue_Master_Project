@@ -25,6 +25,7 @@ def main():
         elif choice == "2":
             planner.show_weekplan(weekplan)
             input("Weiter mit Enter...")
+            print(weekplan)
         elif choice == "3":
             weekplan = planner.create_manual_weekplan(recipes_list)
             input("Weiter mit Enter...")
@@ -35,7 +36,7 @@ def main():
             shopping.generate_shopping_list(recipes_list, weekplan)
             input("Weiter mit Enter...")
         elif choice == "0":
-            save_data(recipes_list, weekplan)
+            save_data(weekplan)
             print("Programm beendet.")
             break
         else:
@@ -44,3 +45,4 @@ def main():
     
 if __name__ == "__main__":
     main()
+

@@ -1,23 +1,9 @@
 {
-  "Montag": [
-    "Test2"
-  ],
-  "Dienstag": [
-    "Test"
-  ],
-  "Mittwoch": [
-    "Te"
-  ],
-  "Donnerstag": [
-    "Test2"
-  ],
-  "Freitag": [
-    "Spaghetti Bolognese"
-  ],
-  "Samstag": [
-    "Sa"
-  ],
-  "Sonntag": [
-    "Sa"
-  ]
+  "Montag": "-",
+  "Dienstag": "-",
+  "Mittwoch": "-",
+  "Donnerstag": "-",
+  "Freitag": "-",
+  "Samstag": "-",
+  "Sonntag": "-"
 }

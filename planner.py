@@ -8,7 +8,6 @@
 
 DAYS = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"]
 
-
 def show_weekplan(weekplan):
     """Zeigt den Wochenplan. Werte können Strings (alt) oder Listen (neu) sein."""
     if not weekplan:
@@ -17,14 +16,12 @@ def show_weekplan(weekplan):
 
     print("\n--- Wochenplan ---")
     for day in DAYS:
-        val = weekplan.get(day, "-")
-        if val == "-" or val == [] or val is None:
-            print(f"{day:11}: -")
-        elif isinstance(val, list):
-            print(f"{day:11}: {', '.join(val)}")
+        val = weekplan.get(day, [])
+        
+        if not val: 
+            print(f"{day:11}:")
         else:
-            print(f"{day:11}: {val}")
-
+            print(f"{day:11}: {', '.join(val)}") #.join eventeull anpassen später
 
 def create_manual_weekplan(recipes):
     """Manuelle Erfassung mit kurzer, gut lesbarer Logik."""

@@ -9,7 +9,7 @@ import os
 
 DATA_FOLDER = "data"
 FILE_RECIPES = "data/recipes.json"
-FILE_WEEKPLAN = "data/weekkplan.json"
+FILE_WEEKPLAN = "data/weekplan.json"
 
 
 def load_data():
@@ -24,22 +24,19 @@ def load_data():
 
 
 def save_data(weekplan):
-    """Speichert die Daten zurück in JSON-Dateien."""
-    _save(FILE_WEEKPLAN, weekplan)
+    """Prüft ob Ordner existiert, ansonsten wird einer erstellt."""
+    if not os.path.exists(DATA_FOLDER):
+        os.makedirs(DATA_FOLDER)
+    """Speichert den Wochenplan."""
+    with open(FILE_WEEKPLAN, "w", encoding="utf-8") as f:
+        json.dump(weekplan, f, indent=2, ensure_ascii=False)
+
 
 
 def _load_or_empty(path):
-    """Hilfsfunktion zum Laden des recipes und weekplan files."""
+    """Prüft ob Datei existiert."""
     try:
         with open(path, "r")as f:
             return json.load(f)
     except FileNotFoundError:
         print(f"Folgendes file konnte nicht gefunden werden: {path}")
-
-# Eventuell löschen
-
-
-def _save(path, data):
-    """Schreibt JSON zurück auf die Festplatte."""
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
