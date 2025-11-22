@@ -16,7 +16,7 @@ def main():
         print("3) Wochenplan neu (manuell)")
         print("4) Wochenplan neu (zufällig)")
         print("5) Einkaufsliste generieren")
-        print("0) Beenden")
+        print("0) Speichern & Beenden")
 
         choice = input("Auswahl: ").strip()
 
