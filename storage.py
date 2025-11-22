@@ -9,7 +9,7 @@ import os
 
 DATA_FOLDER = "data"
 FILE_RECIPES = "data/recipes.json"
-FILE_WEEKPLAN = "data/recipes.json"
+FILE_WEEKPLAN = "data/weekkplan.json"
 
 
 def load_data():
@@ -25,7 +25,7 @@ def load_data():
 
 def save_data(recipes, weekplan):
     """Speichert die Daten zurück in JSON-Dateien."""
-    _save(FILE_RECIPES, recipes)
+    #_save(FILE_RECIPES, recipes)
     _save(FILE_WEEKPLAN, weekplan)
 
 
