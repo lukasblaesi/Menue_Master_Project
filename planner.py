@@ -24,28 +24,46 @@ def show_weekplan(weekplan):
             print(f"{day:11}: {', '.join(val)}") #.join eventeull anpassen später
 
 def create_manual_weekplan(recipes):
-    """Manuelle Erfassung mit kurzer, gut lesbarer Logik."""
+    """Erstellt den Wochenplan per Eingabe im Terminal."""
     if not recipes:
         print("Keine Rezepte vorhanden.")
         return {}
 
-    names = [r["name"] for r in recipes]
+    # Rezepnamen-Liste ohne List-Comprehension
+    names = []
+    for recipe in recipes:
+        names.append(recipe["name"])
+
     _print_recipe_list(names)
     print("\nEingabe pro Tag: mehrere Nummern durch Komma (z. B. 1,3,5). Enter = kein Gericht.")
 
     new_plan = {}
+
     for day in DAYS:
-        selection = _ask_day_selection(day, names)
-        new_plan[day] = selection if selection else "-"
+        selection = _ask_day_selection(day, names)  # gibt Liste von Namen zurück (oder leere Liste)
+        new_plan[day] = selection   # kein "-" mehr, nur [] wenn leer
+
     print("Wochenplan gespeichert.")
     return new_plan
 
 
 def create_random_weekplan(recipes):
-    """Zufälliger Wochenplan: aus Einfachheit 1 Rezept pro Tag (als Liste)."""
+    """Zufälliger Wochenplan: 1 Rezept pro Tag."""
     import random
-    names = [r["name"] for r in recipes]
-    new_plan = {day: [random.choice(names)] for day in DAYS}
+
+    if not recipes:
+        print("Keine Rezepte vorhanden.")
+        return {}
+
+    names = []
+    for recipe in recipes:
+        names.append(recipe["name"])
+
+    new_plan = {}
+    for day in DAYS:
+        zufalls_rezept = random.choice(names)
+        new_plan[day] = [zufalls_rezept]   # als Liste speichern
+
     print("Zufälliger Wochenplan erstellt.")
     return new_plan
 
