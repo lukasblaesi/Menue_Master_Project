@@ -16,12 +16,12 @@ def show_weekplan(weekplan):
 
     print("\n--- Wochenplan ---")
     for day in DAYS:
-        val = weekplan.get(day, [])
+        val = weekplan.get(day, []) #Nimmt Liste aus dem Tag, wenn nichts drin = Leer
         
         if not val: 
             print(f"{day:11}:")
         else:
-            print(f"{day:11}: {', '.join(val)}") #.join eventeull anpassen später
+            print(f"{day:11}: {', '.join(val)}") #.join eventeull anpassen später / join = Mehrere Strings zu einem
 
 def create_manual_weekplan(recipes):
     """Erstellt den Wochenplan per Eingabe im Terminal."""
@@ -29,7 +29,7 @@ def create_manual_weekplan(recipes):
         print("Keine Rezepte vorhanden.")
         return {}
 
-    # Rezepnamen-Liste ohne List-Comprehension
+    # Rezeptnamen-Liste ohne List-Comprehension
     names = []
     for recipe in recipes:
         names.append(recipe["name"])
@@ -75,6 +75,16 @@ def _print_recipe_list(names):
     for i, name in enumerate(names):
         print(f"{i+1}. {name}")
 
+"""
+Sinnvoller so?
+
+def _print_recipe_list(names):
+    print("\nVerfügbare Rezepte:")
+    index = 1
+    for name in names:
+        print(f"{index}. {name}")
+        index += 1
+"""
 
 def _ask_day_selection(day, names):
     """Fragt wiederholt, bis eine gültige Eingabe oder Enter erfolgt.
@@ -88,14 +98,14 @@ def _ask_day_selection(day, names):
         """
         raw = input(day + ": ").strip()
 
-        if raw == "":
+        if raw == "": #Wenn Enter = Leere Liste
             return []
 
         parts = []
 
-        splitted = raw.split(",")
+        splitted = raw.split(",") #Abstand zwischen , wird eingefügt
 
-        for p in splitted:
+        for p in splitted: #Nummern werden nochmals bearbeitet
             p = p.strip()
             if p != "":
                 parts.append(p)
@@ -109,7 +119,7 @@ def _ask_day_selection(day, names):
 def _all_indices_valid(parts, max_len):
     """Prüft, ob alle Teile Ganzzahlen im erlaubten Bereich sind."""
     for p in parts:
-        if not (p.isdigit() and 1 <= int(p) <= max_len): 
+        if not (p.isdigit() and 1 <= int(p) <= max_len): #String darf nur Ziffern haben (p.isdigit)
             return False
     return True
 
@@ -118,8 +128,8 @@ def _indices_to_names(parts, names):
     """Wandelt Index-Strings in Rezeptnamen um und entfernt Duplikate (Reihenfolge bleibt)."""
     selected = []
     for p in parts:
-        name = names[int(p) - 1]
-        if name not in selected:
+        name = names[int(p) - 1] #Listen-Index beginnt immer bei 0
+        if name not in selected: #Duplikatsprüfung
             selected.append(name)
     return selected
 
