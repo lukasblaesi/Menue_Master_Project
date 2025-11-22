@@ -80,10 +80,26 @@ def _ask_day_selection(day, names):
     """Fragt wiederholt, bis eine gültige Eingabe oder Enter erfolgt.
        Rückgabe: Liste von Rezeptnamen oder leere Liste (für '-')."""
     while True:
+        """
         raw = input(f"{day}: ").strip()
         if raw == "":
             return []
         parts = [p.strip() for p in raw.split(",") if p.strip() != ""]
+        """
+        raw = input(day + ": ").strip()
+
+        if raw == "":
+            return []
+
+        parts = []
+
+        splitted = raw.split(",")
+
+        for p in splitted:
+            p = p.strip()
+            if p != "":
+                parts.append(p)
+        
         if not _all_indices_valid(parts, len(names)):
             print("Ungültige Nummer(n). Bitte gültige Nummern im Bereich angeben oder Enter für '-'.")
             continue
@@ -93,7 +109,7 @@ def _ask_day_selection(day, names):
 def _all_indices_valid(parts, max_len):
     """Prüft, ob alle Teile Ganzzahlen im erlaubten Bereich sind."""
     for p in parts:
-        if not (p.isdigit() and 1 <= int(p) <= max_len):
+        if not (p.isdigit() and 1 <= int(p) <= max_len): 
             return False
     return True
 
@@ -106,3 +122,4 @@ def _indices_to_names(parts, names):
         if name not in selected:
             selected.append(name)
     return selected
+
