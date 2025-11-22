@@ -27,23 +27,26 @@ def generate_shopping_list(recipes, weekplan):
 def _collect_totals(recipes, weekplan):
     """Erzeugt die Summen-Matrix: {(Zutat, Einheit): Menge}."""
     totals = {}
-    for _, day_value in weekplan.items():
+    for _, day_value in weekplan.items(): #Paar aus Wochentagen und Rezepten pro Tag / _ Wochentag wird ignoriert
         for recipe_name in _iter_recipe_names_for_day(day_value):
             recipe = _find_recipe(recipes, recipe_name)
             if recipe is None:
+                """"
+                if recipe is not None: (Fällt continue weg)
+                """
                 continue
             for ing in recipe.get("ingredients", []):
                 _add_to_totals(totals, ing)
     return totals
 
 
-def _iter_recipe_names_for_day(value):
+def _iter_recipe_names_for_day(value): #Value = Tag
     """Gibt eine Liste von Rezeptnamen zurück (kompatibel mit String oder Liste)."""
     if value in (None, "-", []):
         return []
-    if isinstance(value, list):
+    if isinstance(value, list): #Prüft ob value bereits eine Liste ist
         return value
-    return [value]
+    return [value] #Wenn nur ein String an diesem Tag eingesetzt ist
 
 
 def _find_recipe(recipes, name):
