@@ -64,34 +64,19 @@ def create_random_weekplan(recipes):
     return new_plan
 
 
-# ----------------------------- Helfer -----------------------------
-
-def _print_recipe_list(names):
-    print("\nVerfügbare Rezepte:")
-    for i, name in enumerate(names):
-        print(f"{i+1}. {name}")
-
-"""
-Sinnvoller so?
-
+# Unterfunkionen
 def _print_recipe_list(names):
     print("\nVerfügbare Rezepte:")
     index = 1
     for name in names:
         print(f"{index}. {name}")
         index += 1
-"""
+
 
 def _ask_day_selection(day, names):
     """Fragt wiederholt, bis eine gültige Eingabe oder Enter erfolgt.
        Rückgabe: Liste von Rezeptnamen oder leere Liste (für '-')."""
     while True:
-        """
-        raw = input(f"{day}: ").strip()
-        if raw == "":
-            return []
-        parts = [p.strip() for p in raw.split(",") if p.strip() != ""]
-        """
         raw = input(day + ": ").strip()
 
         if raw == "": #Wenn Enter = Leere Liste
