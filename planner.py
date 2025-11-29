@@ -13,16 +13,12 @@ def show_weekplan(weekplan):
     if not weekplan:
         print("Noch kein Wochenplan vorhanden.")
         return
-
+     
     print("\n--- Wochenplan ---")
     for day in DAYS:
-        val = weekplan.get(day, []) #Nimmt Liste aus dem Tag, wenn nichts drin = Leer
-        
-        if not val: 
-            print(f"{day:11}:")
-        else:
-            print(f"{day:11}: {', '.join(val)}") #.join eventeull anpassen später / join = Mehrere Strings zu einem
-
+        val = weekplan[day]
+        print(f"{day:11}: {''.join(val)}")
+    
 def create_manual_weekplan(recipes):
     """Erstellt den Wochenplan per Eingabe im Terminal."""
     if not recipes:
