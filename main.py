@@ -1,7 +1,7 @@
 from storage import load_data, save_data
 import recipes
 import planner
-import shopping2
+import shopping
 
 
 def main():
@@ -33,7 +33,7 @@ def main():
             weekplan = planner.create_random_weekplan(recipes_list)
             input("Weiter mit Enter...")
         elif choice == "5":
-            shopping2._collect_totals(weekplan)
+            shopping.generate_shopping_list(recipes_list, weekplan)
             input("Weiter mit Enter...")
         elif choice == "0":
             save_data(weekplan)

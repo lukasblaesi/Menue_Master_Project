@@ -7,10 +7,10 @@
 # -------------------------------------------------------------
 DAYS = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"]
 
-def generate_shopping_list(weekplan):
+def generate_shopping_list(weekplan, recipes):
     """Sammelt, zeigt an, speichert."""
     
-    totals = _collect_totals(weekplan)
+    totals = _collect_recipes(weekplan, recipes)
     
     _print_totals(totals)
     _save_totals(totals, "data/einkaufsliste.txt")
@@ -20,15 +20,21 @@ def generate_shopping_list(weekplan):
 # ------------------------------- Sammeln -------------------------------
 #Prüfen
 
-def _collect_totals(weekplan):
+g = 0.0
+ml = 0.0
+el = 0
+stk = 0
+
+def _collect_recipes(weekplan, recipes):
     recipes_list = []
     for entry in DAYS:
         val = weekplan[entry]
         if val:
-            print("".join(val))
+            #print("".join(val))
             recipes_list.append(val)
-    print("Liste")
-    print(recipes_list)       
+    for index in range(0, len(recipes_list), 1):
+        print(recipes_list[index])
+        print()
     return recipes_list
             
 

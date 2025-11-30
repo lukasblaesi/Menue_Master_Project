@@ -1,7 +1,13 @@
 Zutat                Menge
 ------------------------------
-Spaghetti            750 g
-Rinderhackfleisch    700 g
-Tomatenpassata       1700 ml
-Zwiebel              3 stk
-Olivenöl             5 EL
+Eier                 8 stk
+Butter               40 g
+Salz                 4 TL
+Spaghetti            500 g
+Rinderhackfleisch    600 g
+Tomatenpassata       2000 ml
+Zwiebel              4 stk
+Olivenöl             7 EL
+Paprika              2 stk
+Zucchini             1 stk
+Champignons          200 g

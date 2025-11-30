@@ -1,6 +1,6 @@
 [
   {
-    "Rezept": "Spaghetti Bolognese",
+    "name": "Spaghetti Bolognese",
     "portions": 4,
     "ingredients": [
       {
@@ -31,7 +31,7 @@
     ]
   },
   {
-    "Rezept": "Spaghetti Carbonara",
+    "name": "Spaghetti Carbonara",
     "portions": 4,
     "ingredients": [
       {
@@ -62,7 +62,7 @@
     ]
   },
   {
-    "Rezept": "Gemüsepfanne",
+    "name": "Gemüsepfanne",
     "portions": 2,
     "ingredients": [
       {
@@ -88,7 +88,7 @@
     ]
   },
   {
-    "Rezept": "Omelette",
+    "name": "Omelette",
     "portions": 1,
     "ingredients": [
       {
