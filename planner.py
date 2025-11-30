@@ -10,10 +10,6 @@ DAYS = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "S
 
 def show_weekplan(weekplan):
     """Zeigt den Wochenplan. Werte können Strings (alt) oder Listen (neu) sein."""
-    if not weekplan:
-        print("Noch kein Wochenplan vorhanden.")
-        return
-     
     print("\n--- Wochenplan ---")
     for day in DAYS:
         val = weekplan[day]
@@ -21,10 +17,6 @@ def show_weekplan(weekplan):
     
 def create_manual_weekplan(recipes):
     """Erstellt den Wochenplan per Eingabe im Terminal."""
-    if not recipes:
-        print("Keine Rezepte vorhanden.")
-        return {}
-
     # Rezeptnamen-Liste ohne List-Comprehension
     names = []
     for recipe in recipes:
@@ -46,10 +38,6 @@ def create_manual_weekplan(recipes):
 def create_random_weekplan(recipes):
     """Zufälliger Wochenplan: 1 Rezept pro Tag."""
     import random
-
-    if not recipes:
-        print("Keine Rezepte vorhanden.")
-        return {}
 
     names = []
     for recipe in recipes:
@@ -113,4 +101,3 @@ def _indices_to_names(parts, names):
         if name not in selected: #Duplikatsprüfung
             selected.append(name)
     return selected
-
