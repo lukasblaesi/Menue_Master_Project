@@ -1,6 +1,6 @@
 [
   {
-    "name": "Spaghetti Bolognese",
+    "Rezept": "Spaghetti Bolognese",
     "portions": 4,
     "ingredients": [
       {
@@ -31,7 +31,7 @@
     ]
   },
   {
-    "name": "Spaghetti Carbonara",
+    "Rezept": "Spaghetti Carbonara",
     "portions": 4,
     "ingredients": [
       {
@@ -62,7 +62,7 @@
     ]
   },
   {
-    "name": "Gemüsepfanne",
+    "Rezept": "Gemüsepfanne",
     "portions": 2,
     "ingredients": [
       {
@@ -88,7 +88,7 @@
     ]
   },
   {
-    "name": "Omelette",
+    "Rezept": "Omelette",
     "portions": 1,
     "ingredients": [
       {
@@ -109,7 +109,7 @@
     ]
   },
   {
-    "name": "Test",
+    "Rezept": "Test",
     "portions": 1,
     "ingredients": [
       {
@@ -120,27 +120,6 @@
       {
         "name": "Test",
         "amount": 100.0,
-        "unit": "g"
-      }
-    ]
-  },
-  {
-    "name": "Test2",
-    "portions": 2,
-    "ingredients": []
-  },
-  {
-    "name": "Sa",
-    "portions": 1,
-    "ingredients": []
-  },
-  {
-    "name": "Te",
-    "portions": 1,
-    "ingredients": [
-      {
-        "name": "Mi",
-        "amount": 11.0,
         "unit": "g"
       }
     ]

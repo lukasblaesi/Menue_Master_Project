@@ -8,15 +8,9 @@
 
 def generate_shopping_list(recipes, weekplan):
     """Kurze Orientierung: prüft, sammelt, zeigt an, speichert."""
-    if not weekplan:
-        print("Kein Wochenplan vorhanden.")
-        return
-
+    
     totals = _collect_totals(recipes, weekplan)
-    if not totals:
-        print("Keine Zutaten gefunden.")
-        return
-
+    
     _print_totals(totals)
     _save_totals(totals, "data/einkaufsliste.txt")
     print("Einkaufsliste gespeichert: data/einkaufsliste.txt")
