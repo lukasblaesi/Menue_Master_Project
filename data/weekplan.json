@@ -1,15 +1,23 @@
 {
-  "Montag": [],
+  "Montag": [
+    "Omelette"
+  ],
   "Dienstag": [
-    "Spaghetti Bolognese"
+    "Spaghetti Carbonara"
   ],
   "Mittwoch": [
-    "Gemüsepfanne"
+    "Spaghetti Carbonara"
   ],
   "Donnerstag": [
     "Omelette"
   ],
-  "Freitag": [],
-  "Samstag": [],
-  "Sonntag": []
+  "Freitag": [
+    "Omelette"
+  ],
+  "Samstag": [
+    "Omelette"
+  ],
+  "Sonntag": [
+    "Gemüsepfanne"
+  ]
 }

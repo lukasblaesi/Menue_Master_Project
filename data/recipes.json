@@ -107,21 +107,5 @@
         "unit": "tl"
       }
     ]
-  },
-  {
-    "Rezept": "Test",
-    "portions": 1,
-    "ingredients": [
-      {
-        "name": "Toast",
-        "amount": 2.0,
-        "unit": "g"
-      },
-      {
-        "name": "Test",
-        "amount": 100.0,
-        "unit": "g"
-      }
-    ]
   }
 ]

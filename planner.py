@@ -20,7 +20,7 @@ def create_manual_weekplan(recipes):
     # Rezeptnamen-Liste ohne List-Comprehension
     names = []
     for recipe in recipes:
-        names.append(recipe["name"])
+        names.append(recipe["Rezept"])
 
     _print_recipe_list(names)
     print("\nEingabe pro Tag: mehrere Nummern durch Komma (z. B. 1,3,5). Enter = kein Gericht.")
@@ -41,7 +41,7 @@ def create_random_weekplan(recipes):
 
     names = []
     for recipe in recipes:
-        names.append(recipe["name"])
+        names.append(recipe["Rezept"])
 
     new_plan = {}
     for day in DAYS:
@@ -56,8 +56,8 @@ def create_random_weekplan(recipes):
 def _print_recipe_list(names):
     print("\nVerfügbare Rezepte:")
     index = 1
-    for name in names:
-        print(f"{index}. {name}")
+    for Rezept in names:
+        print(f"{index}. {Rezept}")
         index += 1
 
 
