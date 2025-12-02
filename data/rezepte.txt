@@ -1,0 +1,17 @@
+Spaghetti Bolognese;Spaghetti;100;g
+Spaghetti Bolognese;Hackfleisch;100;g
+Spaghetti Bolognese;Tomatensauce;100;ml
+Spaghetti Bolognese;Zwiebel;0.5;Stück
+
+Gemüsepfanne;Paprika;0.5;Stück
+Gemüsepfanne;Zucchini;0.5;Stück
+Gemüsepfanne;Karotte;1;Stück
+Gemüsepfanne;Reis;80;g
+
+Omelette;Ei;2;Stück
+Omelette;Milch;50;ml
+Omelette;Käse;30;g
+
+Salat;Blattsalat;50;g
+Salat;Tomate;1;Stück
+Salat;Gurke;0.25;Stück
