@@ -71,6 +71,7 @@ def wochenplan_zufaellig_erstellen(wochenplan):
 
     for i in range(len(wochentage)):
         wochenplan[i] = random.randint(0, len(rezepte_liste) - 1)
+        #0 erster Index zu -1 letzter Index
 
     print("Ein zufälliger Wochenplan wurde erstellt.\n")
 
@@ -90,7 +91,7 @@ def einkaufsliste_erstellen(wochenplan):
             # Alle Zutaten dieses Rezepts hinzufügen
             for z in rezept["zutaten"]:
                 schluessel = (z["name"], z["einheit"])
-
+                #Schlüssel ist eine Art Mini-Liste z.B. ("Spaghetti", "g")
                 if schluessel in einkaufsliste:
                     einkaufsliste[schluessel] += z["menge"]
                 else:
@@ -113,6 +114,7 @@ def einkaufsliste_anzeigen(wochenplan):
     zeilen = []
 
     for (name, einheit), menge in einkaufsliste.items():
+        #Bildet Paare mit Schlüssel und Menge
         text = "- " + str(menge) + " " + einheit + " " + name
         print(text)
         zeilen.append(text)
@@ -130,6 +132,7 @@ def einkaufsliste_anzeigen(wochenplan):
         # Zeilen schreiben
         for text in zeilen:
             datei.write(text + "\n")
+            #Jeder Text wird auf eine Zeile geschrieben
 
         datei.close()
         print("Einkaufsliste wurde in 'daten/einkaufsliste.txt' gespeichert.\n")

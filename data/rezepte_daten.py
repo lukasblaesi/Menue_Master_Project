@@ -15,6 +15,7 @@ def rezepte_aus_datei_laden(dateiname):
     # Datei öffnen
     try:
         datei = open(dateiname, "r", encoding="utf-8")
+        #encoding wichtig für Umlaute: ÄÖÜ
     except:
         print("Fehler: Datei '" + dateiname + "' wurde nicht gefunden.")
         return []
@@ -42,6 +43,7 @@ def rezepte_aus_datei_laden(dateiname):
         # Menge in Zahl umwandeln
         try:
             menge = float(menge_text.replace(",", "."))
+            #Kommas werden mit Punkt ersetzt: 0,5 -> 0.5
         except ValueError:
             print("Ungültige Menge, Zeile übersprungen: " + zeile)
             continue
