@@ -86,7 +86,7 @@ Beispiele:
  
 ### 3. Dateiverarbeitung
  
-Das Programm speichert alle relevanten Daten in **JSON-Dateien** (strukturierte Textformate).
+Das Programm speichert alle relevanten Daten in **Txt-Dateien** (strukturierte Textformate).
  
 #### **Input (Laden beim Start):**
  
@@ -112,7 +112,7 @@ Beim Beenden werden alle Änderungen automatisch gespeichert, um Datenverlust zu
 * Programmiersprache: **Python 3.x**
 * Entwicklungsumgebung: **GitHub Codespaces / Visual Studio Code**
 * Formatierung: **PEP8-konform**
-* Externe Bibliotheken: Aktuell noch nicht vorahnden, wird ergänzt.
+* Externe Bibliotheken: Keine
  
 ---
  
@@ -125,14 +125,14 @@ Wird ergänzt
 ### **Starten der Anwendung**
  
 ---
-Wird ergänzt
+Ausführung main.py
 ---
  
 ### **Verwendete Bibliotheken**
  
 ---
  
-Wird ergänzt
+Keine
  
 ---
  
@@ -141,9 +141,9 @@ Wird ergänzt
  
 | Name      | Beitrag / Verantwortungsbereich                |
 | --------- | ---------------------------------------------- |
-| Student A | Rezeptverwaltung                               |
-| Student B | Wochenplanung und Zufallslogik                 |
-| Student C | Einkaufsliste generieren und Dateiverarbeitung |
+| Joel N. | Konsolenanzeige / Darstellung Konsole                              |
+| Joel R. | Auslesen und Verwaltung der Rezepte                 |
+| Lukas   | Abfrage Wochenplan mit vorhandenen Menus (Rezepten) / Export Einkaufsliste |
  
 ---
  
