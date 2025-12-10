@@ -125,7 +125,7 @@ Wird ergänzt
 ### **Starten der Anwendung**
  
 ---
-Ausführung main.py
+* Ausführung main.py
 ---
  
 ### **Verwendete Bibliotheken**
@@ -143,7 +143,7 @@ Keine
 | --------- | ---------------------------------------------- |
 | Joel N. | Konsolenanzeige / Darstellung Konsole                              |
 | Joel R. | Auslesen und Verwaltung der Rezepte                 |
-| Lukas   | Abfrage Wochenplan mit vorhandenen Menus (Rezepten) / Export Einkaufsliste |
+| Lukas B.   | Abfrage Wochenplan mit vorhandenen Menus (Rezepten) / Export Einkaufsliste |
  
 ---
  
