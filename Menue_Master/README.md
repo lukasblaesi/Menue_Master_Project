@@ -44,7 +44,9 @@ Das Ganze läuft vollständig über die **Kommandozeile (Konsole)**, ohne grafis
 * Wochenplan erstellen (manuell oder zufällig)
 * Wochenplan anzeigen
 * Einkaufsliste generieren und anzeigen
-* Daten speichern und laden
+* Daten lesen (Rezepte aus .txt)
+* Daten verarbeiten
+* Daten speichern
  
 ---
  
@@ -61,20 +63,22 @@ Das Projekt erfüllt die drei Pflichtanforderungen der Aufgabenstellung:
 ### 1. Interaktive Anwendung
  
 Das Programm läuft vollständig über die **Konsole**.
-Der Anwender kann über ein Menü zwischen verschiedenen Funktionen wählen, z.B.:
+Der Anwender trifft seine Auswahl über ein nummeriertes Menü. Typische Aktionen:
  
 * Rezept anzeigen
-* Wochenplan anzeigen oder neu generieren
-* Einkaufsliste ausgeben
+* Wochenplan erstellen (manuell)
+* Wochenplan zufällig generieren
+* Wochenplan anzeigen
+* Einkaufsliste anzeigen und speichern
  
-Alle Eingaben erfolgen per Tastatur, die Ausgaben werden übersichtlich im Terminal dargestellt.
+Alle Eingaben erfolgen über die Tastatur, alle Ausgaben erscheinen klar strukturiert in der Konsole.
  
 ---
  
 ### 2. Datenvalidierung
  
 Bei der Dateneingabe wird auf **korrekte, vollständige und sinnvolle Eingaben** geachtet.
-Beispiele:
+Beispiele der validierten Eingaben:
  
 
 * Mengenangaben müssen **numerisch** und **grösser als 0** sein.
@@ -86,7 +90,7 @@ Beispiele:
  
 ### 3. Dateiverarbeitung
  
-Das Programm speichert alle relevanten Daten in **Txt-Dateien** (strukturierte Textformate).
+Das Programm speichert alle relevanten Daten in **JSON-Dateien** (strukturierte Textformate).
  
 #### **Input (Laden beim Start):**
  
@@ -95,10 +99,13 @@ Das Programm speichert alle relevanten Daten in **Txt-Dateien** (strukturierte T
  
 #### **Output (Speichern oder Ausgabe im Programm):**
  
-* **Einkaufsliste:** Automatisch generiert aus allen Rezepten des Wochenplans
+* **Einkaufsliste in daten/einkaufsliste.txt** 
  
-  * Zutaten werden **zusammengefasst**, wenn sie mehrfach vorkommen
-  * Ausgabe sowohl **in der Konsole** als auch optional **in einer Textdatei** (`einkaufsliste.txt`)
+  * Wird automatisch erstellt, sobald der Benutzer sie anzeigen lässt
+  * Zutaten werden **zusammengefasst**, (gleiche Zutat + gleiche Einheit)
+  * Zusätzlich Ausgabe in der Konsole
+
+Die Datenverarbeitung erfolgt bewusst anfängerfreundlich und mit einfachen Python-Befehlen (open(), .read(), .write()).
  
 Beim Start der Anwendung werden vorhandene Dateien automatisch geladen.
 Beim Beenden werden alle Änderungen automatisch gespeichert, um Datenverlust zu vermeiden.
@@ -120,10 +127,22 @@ Beim Beenden werden alle Änderungen automatisch gespeichert, um Datenverlust zu
  
 ---
 
+Projektordner/
+│
+├── main.py                   # Hauptprogramm (Menü & Programmsteuerung)
+├── anzeigen.py               # Reine Ausgabefunktionen (Menü, Wochenplan, Rezepte)
+├── wochenplan_funktionen.py  # Wochenplan & Einkaufsliste (Logik)
+├── rezepte_daten.py          # Laden der Rezeptdaten aus Datei
+│
+└── daten/
+    ├── rezepte.txt           # Eingabedatei mit allen Rezepten
+    └── einkaufsliste.txt     # Ausgabe der erzeugten Einkaufsliste
+
 * main.py: Beinhaltet das Hauptmenü/Programmlogik mit der Übersicht der Unterprogramme des Menü Master Programms.
 * anzeigen.py: Beinhaltet sämtliche Funktionen, welche Ausgaben aus der Konsole darstellen, wie Konsolenmenü 1-5 und 0, sowie Anzeigen/Formatierung der Rezepte und Wochenpläne.
 * rezepte_daten.py: Rezepte aus der Datei "rezepte.txt" laden.
 * wochenplan_funktionen.py: Beinhaltet die Funktionen um einen manuellen und zufälligen Wochenplan mit zugeordneten Rezepten zu erstellen. Ebenfalls ist die Funktion zur Ausgabe und Generierung der Einkaufsliste enthalten.
+* Daten Ordner: Einlesen von Rezepten (rezepte.txt) und ablegen / speichern von der Einkaufsliste (einkaufsliste.txt)
 
 ---
  
@@ -150,9 +169,9 @@ Beim Beenden werden alle Änderungen automatisch gespeichert, um Datenverlust zu
  
 | Name      | Beitrag / Verantwortungsbereich                |
 | --------- | ---------------------------------------------- |
-| Joel N. | Konsolenanzeige / Darstellung Konsole                              |
-| Joel R. | Auslesen und Verwaltung der Rezepte                 |
-| Lukas B.   | Abfrage Wochenplan mit vorhandenen Menus (Rezepten) / Export Einkaufsliste |
+| Joel N.   | Konsolenanzeige / Darstellung Konsole          |
+| Joel R.   | Auslesen und Verwaltung der Rezepte            |
+| Lukas B.  | Abfrage Wochenplan mit vorhandenen Menus (Rezepten) / Export Einkaufsliste |
  
 ---
  
