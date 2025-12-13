@@ -120,10 +120,10 @@ Beim Beenden werden alle Änderungen automatisch gespeichert, um Datenverlust zu
  
 ---
 
-main.py: Beinhaltet das Hauptmenü/Programmlogik mit der Übersicht der Unterprogramme des Menü Master Programms.
-anzeigen.py: Beinhaltet sämtliche Funktionen, welche Ausgaben aus der Konsole darstellen, wie Konsolenmenü 1-5 und 0, sowie Anzeigen/Formatierung der Rezepte und Wochenpläne.
-rezepte_daten.py: Rezepte aus der Datei "rezepte.txt" laden.
-wochenplan_funktionen.py: Beinhaltet die Funktionen um einen manuellen und zufälligen Wochenplan mit zugeordneten Rezepten zu erstellen. Ebenfalls ist die Funktion zur Ausgabe und Generierung der Einkaufsliste enthalten.
+* main.py: Beinhaltet das Hauptmenü/Programmlogik mit der Übersicht der Unterprogramme des Menü Master Programms.
+* anzeigen.py: Beinhaltet sämtliche Funktionen, welche Ausgaben aus der Konsole darstellen, wie Konsolenmenü 1-5 und 0, sowie Anzeigen/Formatierung der Rezepte und Wochenpläne.
+* rezepte_daten.py: Rezepte aus der Datei "rezepte.txt" laden.
+* wochenplan_funktionen.py: Beinhaltet die Funktionen um einen manuellen und zufälligen Wochenplan mit zugeordneten Rezepten zu erstellen. Ebenfalls ist die Funktion zur Ausgabe und Generierung der Einkaufsliste enthalten.
 
 ---
  
@@ -141,7 +141,7 @@ wochenplan_funktionen.py: Beinhaltet die Funktionen um einen manuellen und zufä
  
 ---
  
-- Keine ausserhalb der klassichen Pyhton Bibliothek.
+* Keine ausserhalb der klassichen Pyhton Bibliothek.
  
 ---
  
