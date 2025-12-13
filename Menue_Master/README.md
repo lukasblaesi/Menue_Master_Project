@@ -109,7 +109,7 @@ Beim Beenden werden alle Änderungen automatisch gespeichert, um Datenverlust zu
  
 ### **Technologie**
  
-* Programmiersprache: **Python 3.x**
+* Programmiersprache: **Python 3.11.14**
 * Entwicklungsumgebung: **GitHub Codespaces / Visual Studio Code**
 * Formatierung: **PEP8-konform**
 * Externe Bibliotheken: Keine
@@ -120,21 +120,28 @@ Beim Beenden werden alle Änderungen automatisch gespeichert, um Datenverlust zu
  
 ---
 
-Wird ergänzt
+main.py: Beinhaltet das Hauptmenü/Programmlogik mit der Übersicht der Unterprogramme des Menü Master Programms.
+anzeigen.py: Beinhaltet sämtliche Funktionen, welche Ausgaben aus der Konsole darstellen, wie Konsolenmenü 1-5 und 0, sowie Anzeigen/Formatierung der Rezepte und Wochenpläne.
+rezepte_daten.py: Rezepte aus der Datei "rezepte.txt" laden.
+wochenplan_funktionen.py: Beinhaltet die Funktionen um einen manuellen und zufälligen Wochenplan mit zugeordneten Rezepten zu erstellen. Ebenfalls ist die Funktion zur Ausgabe und Generierung der Einkaufsliste enthalten.
 
 ---
  
 ### **Starten der Anwendung**
  
 ---
-* Ausführung main.py
+
+1. Die kompette Datenablage "Menue_Master" herunterladen und als Projekt als main folder hinterlegen.
+2. In der Python Konsole mit "cd" (Change Directory) in den main folder "Menue_Master" navigieren.
+3. Das "main.py" starten.
+
 ---
  
 ### **Verwendete Bibliotheken**
  
 ---
  
-Keine
+- Keine ausserhalb der klassichen Pyhton Bibliothek.
  
 ---
  
