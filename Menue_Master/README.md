@@ -119,7 +119,9 @@ Beim Beenden werden alle Änderungen automatisch gespeichert, um Datenverlust zu
 ### **Projektstruktur**
  
 ---
+
 Wird ergänzt
+
 ---
  
 ### **Starten der Anwendung**
