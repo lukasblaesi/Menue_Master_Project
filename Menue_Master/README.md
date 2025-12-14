@@ -150,7 +150,7 @@ Projektordner/
  
 ---
 
-1. Die kompette Datenablage "Menue_Master" herunterladen und als Projekt als main folder hinterlegen.
+1. Die komplette Datenablage "Menue_Master" herunterladen und als Projekt als main folder hinterlegen.
 2. In der Python Konsole mit "cd" (Change Directory) in den main folder "Menue_Master" navigieren.
 3. Das "main.py" starten.
 
