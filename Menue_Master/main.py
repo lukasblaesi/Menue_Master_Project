@@ -1,24 +1,23 @@
 # main.py
-# Dies ist das Hauptprogramm.
-# Hier läuft die Menü-Schleife und steuert den Ablauf des Programms.
+"""Startpunkt der Konsolenanwendung (Menüführung und Programmablauf)."""
 
-from anzeigen import menue_anzeigen, rezepte_anzeigen, wochenplan_anzeigen
-from wochenplan_funktionen import (
-    wochenplan_manuell_erstellen,
-    wochenplan_zufaellig_erstellen,
-    einkaufsliste_anzeigen,
-)
+from anzeigen import menue_anzeigen
+from anzeigen import rezepte_anzeigen
+from anzeigen import wochenplan_anzeigen
+from wochenplan_funktionen import einkaufsliste_anzeigen
+from wochenplan_funktionen import wochenplan_manuell_erstellen
+from wochenplan_funktionen import wochenplan_zufaellig_erstellen
+
 
 def hauptprogramm():
-    # Wochenplan: Für jeden der 7 Tage steht hier eine Rezeptnummer (Index) oder None.
+    """Startet die Menü-Schleife und ruft die gewählten Funktionen auf."""
     wochenplan = [None, None, None, None, None, None, None]
 
     while True:
-        # Menü anzeigen
         menue_anzeigen()
-        # Eingabe lesen
+
         auswahl = input("Bitte Zahl eingeben: ").strip()
-        # Auswertung der Eingabe
+
         if auswahl == "1":
             rezepte_anzeigen()
         elif auswahl == "2":
@@ -33,9 +32,8 @@ def hauptprogramm():
             print("Programm wird beendet. Tschüss!")
             break
         else:
-            # Wenn eine falsche Zahl eingegeben wird
             print("Ungültige Eingabe. Bitte nochmal versuchen.")
 
-# Programmstart
+
 if __name__ == "__main__":
     hauptprogramm()
