@@ -1,14 +1,14 @@
 # wochenplan_funktionen.py
-# Enthält die Funktionen für:
-# - Rezeptauswahl
-# - Wochenplan (manuell / zufällig)
-# - Einkaufsliste erstellen und speichern
+"""Logik für Wochenplan, Rezeptauswahl und Einkaufsliste (Konsole)."""
 
 import random
-from rezepte_daten import rezepte_liste, wochentage
+
+from rezepte_daten import rezepte_liste
+from rezepte_daten import wochentage
+
 
 def rezept_liste_anzeigen_kurz():
-    # Zeigt alle Rezepte nur mit Nummer und Name an.
+    """Zeigt alle Rezepte nummeriert an, damit man sie auswählen kann."""
     print()
     print("Verfügbare Rezepte:")
     nummer = 1
@@ -19,33 +19,34 @@ def rezept_liste_anzeigen_kurz():
 
     print()
 
+
 def rezept_auswahl():
     """
-    Fragt den Benutzer nach einer Rezeptnummer.
-    Validierungen:
-    - Eingabe ist Zahl?
-    - Zahl innerhalb der vorhandenen Rezepte?
+    Fragt eine Rezeptnummer ab und validiert die Eingabe.
+
+    Rückgabe:
+    - Index (0-basiert) eines Rezepts oder
+    - None, wenn Enter gedrückt wurde
     """
     while True:
-        eingabe = input("Bitte Rezeptnummer eingeben (oder Enter für kein Rezept): ").strip()
+        eingabe = input(
+            "Bitte Rezeptnummer eingeben (oder Enter für kein Rezept): "
+        ).strip()
 
-        # Kein Rezept für diesen Tag
         if eingabe == "":
             return None
 
-        # Prüfen ob Zahl
         if eingabe.isdigit():
             nummer = int(eingabe)
 
-            # Bereich prüfen
             if 1 <= nummer <= len(rezepte_liste):
                 return nummer - 1
 
-        # Falls ungültig
         print("Ungültige Eingabe. Bitte nochmal versuchen.")
 
+
 def wochenplan_manuell_erstellen(wochenplan):
-    # Benutzer wählt für jeden Tag ein Rezept aus.
+    """Ersetzt den Wochenplan durch neue Werte (manuelle Eingabe)."""
     print()
     print("====== Wochenplan manuell erstellen ======")
 
@@ -64,34 +65,34 @@ def wochenplan_manuell_erstellen(wochenplan):
 
     print("\nDer neue Wochenplan wurde erstellt.\n")
 
+
 def wochenplan_zufaellig_erstellen(wochenplan):
-    # Wählt für jeden Tag zufällig ein Rezept aus.
+    """Ersetzt den Wochenplan durch zufällige Rezepte aus der Rezeptliste."""
     print()
     print("====== Zufälligen Wochenplan erstellen ======")
 
     for i in range(len(wochentage)):
         wochenplan[i] = random.randint(0, len(rezepte_liste) - 1)
-        #0 erster Index zu -1 letzter Index
 
     print("Ein zufälliger Wochenplan wurde erstellt.\n")
 
+
 def einkaufsliste_erstellen(wochenplan):
     """
-    Erstellt eine Einkaufsliste.
-    Schlüssel = (Zutatname, Einheit)
-    Wert     = gesamte Menge
+    Erstellt eine Einkaufsliste mit zusammengefassten Mengen.
+
+    Schlüssel: (Zutatname, Einheit)
+    Wert: Gesamtmenge (Summe über die Woche)
     """
     einkaufsliste = {}
 
-    # Durch die geplanten Rezepte gehen
     for rezept_index in wochenplan:
         if rezept_index is not None:
             rezept = rezepte_liste[rezept_index]
 
-            # Alle Zutaten dieses Rezepts hinzufügen
             for z in rezept["zutaten"]:
                 schluessel = (z["name"], z["einheit"])
-                #Schlüssel ist eine Art Mini-Liste z.B. ("Spaghetti", "g")
+
                 if schluessel in einkaufsliste:
                     einkaufsliste[schluessel] += z["menge"]
                 else:
@@ -99,8 +100,9 @@ def einkaufsliste_erstellen(wochenplan):
 
     return einkaufsliste
 
+
 def einkaufsliste_anzeigen(wochenplan):
-    # Einkaufsliste anzeigen und zusätzlich speichern.
+    """Gibt die Einkaufsliste aus und speichert sie als Textdatei."""
     print()
     print("====== Einkaufsliste ======")
 
@@ -114,28 +116,23 @@ def einkaufsliste_anzeigen(wochenplan):
     zeilen = []
 
     for (name, einheit), menge in einkaufsliste.items():
-        #Bildet Paare mit Schlüssel und Menge
         text = "- " + str(menge) + " " + einheit + " " + name
         print(text)
         zeilen.append(text)
 
     print()
 
-    # In Unterordner speichern
     try:
         datei = open("daten/einkaufsliste.txt", "w", encoding="utf-8")
 
-        # Titel schreiben
         datei.write("Einkaufsliste\n")
         datei.write("=============\n\n")
 
-        # Zeilen schreiben
         for text in zeilen:
             datei.write(text + "\n")
-            #Jeder Text wird auf eine Zeile geschrieben
 
         datei.close()
         print("Einkaufsliste wurde in 'daten/einkaufsliste.txt' gespeichert.\n")
 
-    except:
+    except OSError:
         print("Einkaufsliste konnte nicht gespeichert werden.\n")
