@@ -95,7 +95,6 @@ Das Programm speichert alle relevanten Daten in **JSON-Dateien** (strukturierte 
 #### **Input (Laden beim Start):**
  
 * **Rezepte:** Enthält Name, Zutatenliste, Mengen, Portionen
-* **Wochenplan:** Zuordnung von Rezepten zu den Wochentagen
  
 #### **Output (Speichern oder Ausgabe im Programm):**
  
