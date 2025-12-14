@@ -1,36 +1,33 @@
 # rezepte_daten.py
-# Dieses Modul lädt alle Rezepte aus einer Textdatei.
-# Format pro Zeile: Rezeptname;Zutatname;Menge;Einheit
-# Die Datei liegt im Unterordner "daten/rezepte.txt".
+"""Lädt Rezepte aus einer Textdatei im Format: Rezept;Zutat;Menge;Einheit."""
 
 def rezepte_aus_datei_laden(dateiname):
     """
-    Liest Rezepte aus einer Textdatei.
-    Baut eine einfache Liste von Rezepten auf.
-    Validierung: Format und numerische Menge.
-    """
+    Liest Rezepte aus einer Textdatei ein und baut eine Rezeptliste auf.
 
+    Validierung (minimal):
+    - Zeile hat genau 4 Teile (getrennt durch ';')
+    - Menge ist numerisch (float)
+    """
     rezepte_liste = []
 
-    # Datei öffnen
     try:
         datei = open(dateiname, "r", encoding="utf-8")
-        #encoding wichtig für Umlaute: ÄÖÜ
-    except:
+    except FileNotFoundError:
         print("Fehler: Datei '" + dateiname + "' wurde nicht gefunden.")
         return []
+    except OSError:
+        print("Fehler: Datei '" + dateiname + "' konnte nicht geöffnet werden.")
+        return []
 
-    # Datei Zeile für Zeile lesen
     for zeile in datei:
         zeile = zeile.strip()
 
-        # Leere Zeilen ignorieren
         if zeile == "":
             continue
 
         teile = zeile.split(";")
 
-        # Format prüfen: genau 4 Teile
         if len(teile) != 4:
             print("Zeile übersprungen (falsches Format): " + zeile)
             continue
@@ -40,22 +37,18 @@ def rezepte_aus_datei_laden(dateiname):
         menge_text = teile[2].strip()
         einheit = teile[3].strip()
 
-        # Menge in Zahl umwandeln
         try:
             menge = float(menge_text.replace(",", "."))
-            #Kommas werden mit Punkt ersetzt: 0,5 -> 0.5
         except ValueError:
             print("Ungültige Menge, Zeile übersprungen: " + zeile)
             continue
 
-        # Rezept in der Liste suchen
         rezept_gefunden = None
         for rezept in rezepte_liste:
             if rezept["name"] == rezeptname:
                 rezept_gefunden = rezept
                 break
 
-        # Wenn nicht gefunden: neues Rezept in die Liste einfügen
         if rezept_gefunden is None:
             rezept_gefunden = {
                 "name": rezeptname,
@@ -63,7 +56,6 @@ def rezepte_aus_datei_laden(dateiname):
             }
             rezepte_liste.append(rezept_gefunden)
 
-        # Zutat einfach hinzufügen (keine Duplikat-Prüfung)
         rezept_gefunden["zutaten"].append({
             "name": zutatname,
             "menge": menge,
@@ -74,10 +66,9 @@ def rezepte_aus_datei_laden(dateiname):
     return rezepte_liste
 
 
-# Rezepte aus Datei laden (Unterordner daten/)
 rezepte_liste = rezepte_aus_datei_laden("daten/rezepte.txt")
 
-# Liste der Wochentage
+
 wochentage = [
     "Montag", "Dienstag", "Mittwoch",
     "Donnerstag", "Freitag", "Samstag", "Sonntag"
