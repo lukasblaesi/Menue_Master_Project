@@ -1,11 +1,12 @@
 # anzeigen.py
-# Dieses Modul enthält nur Funktionen, die etwas AUSGEBEN.
-# Keine Berechnungen – nur Darstellung für den Benutzer.
+"""Ausgabe-Modul: enthält nur Funktionen, die Text in der Konsole anzeigen."""
 
-from rezepte_daten import rezepte_liste, wochentage
+from rezepte_daten import rezepte_liste
+from rezepte_daten import wochentage
+
 
 def menue_anzeigen():
-    # Zeigt das Hauptmenü.
+    """Gibt das Hauptmenü aus (rein zur Benutzerführung)."""
     print()
     print("====== Rezept- und Wochenplaner ======")
     print("1) Rezepte anzeigen")
@@ -16,8 +17,9 @@ def menue_anzeigen():
     print("0) Programm beenden")
     print()
 
+
 def rezepte_anzeigen():
-    # Gibt alle Rezepte mit ihren Zutaten aus.
+    """Zeigt alle geladenen Rezepte inkl. Zutaten an."""
     if len(rezepte_liste) == 0:
         print("Es sind keine Rezepte vorhanden.")
         return
@@ -41,8 +43,9 @@ def rezepte_anzeigen():
 
     print()
 
+
 def wochenplan_anzeigen(wochenplan):
-    # Zeigt den Wochenplan eines Benutzers an.
+    """Zeigt den aktuellen Wochenplan an (Tag -> Rezept oder leer)."""
     print()
     print("====== Aktueller Wochenplan ======")
 
