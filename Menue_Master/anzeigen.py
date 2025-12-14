@@ -13,7 +13,7 @@ def menue_anzeigen():
     print("2) Wochenplan anzeigen")
     print("3) Wochenplan manuell erstellen")
     print("4) Wochenplan zufällig erstellen")
-    print("5) Einkaufsliste anzeigen")
+    print("5) Einkaufsliste anzeigen & speichern")
     print("0) Programm beenden")
     print()
 
